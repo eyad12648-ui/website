@@ -1,442 +1,183 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AL BADR FOR IMPORT & EXPORT | فودافون كاش - محافظ التحويل</title>
-  <meta name="description" content="محافظ فودافون كاش الرسمية لشركة البدر للاستيراد والتصدير - اختر المحفظة المناسبة للوصول إلى كود التحويل والـ QR Code الخاص بها بسهولة.">
-  
-  <!-- Favicon -->
+  <title>AL BADR FOR IMPORT & EXPORT | فودافون كاش</title>
+  <meta name="description" content="محافظ فودافون كاش لشركة البدر للاستيراد والتصدير.">
+
   <link rel="icon" type="image/jpeg" href="logo.jpeg">
-  
-  <!-- Google Fonts: Tajawal (Arabic) + Outfit (Latin) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-  
-  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
-  
-  <!-- Lightweight Standalone QR Code Library (Local with CDN fallback) -->
+
   <script src="qrcode.min.js"></script>
   <script>
-    if (typeof QRCode === 'undefined') {
+    if (typeof QRCode === "undefined") {
       document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"><\/script>');
     }
   </script>
 
-  <!-- Vodafone Page Specific Styles -->
   <style>
-    /* Subpage Header */
     .subpage-header-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 76px;
+      display:flex; align-items:center; justify-content:space-between; height:76px;
     }
-
     .btn-back-home {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--color-white);
-      font-size: 0.92rem;
-      font-weight: 600;
-      padding: 8px 16px;
-      border-radius: var(--radius-full);
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(216, 181, 109, 0.3);
-      transition: all var(--transition-fast);
-      cursor: pointer;
+      display:inline-flex; align-items:center; gap:8px; color:var(--color-white);
+      font-size:.92rem; font-weight:600; padding:8px 16px;
+      border-radius:var(--radius-full); background:rgba(255,255,255,.08);
+      border:1px solid rgba(216,181,109,.3); transition:all var(--transition-fast);
+      cursor:pointer; text-decoration:none;
     }
-
     .btn-back-home:hover {
-      background: var(--color-accent-gold);
-      color: var(--color-primary-dark);
-      border-color: var(--color-accent-gold);
-      transform: translateX(3px);
+      background:var(--color-accent-gold); color:var(--color-primary-dark);
+      border-color:var(--color-accent-gold); transform:translateX(3px);
     }
-
-    .btn-back-home svg {
-      width: 18px;
-      height: 18px;
-      transition: transform var(--transition-fast);
-    }
-
+    .btn-back-home svg {width:18px;height:18px}
     .header-subpage-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--color-accent-gold);
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      font-size:1.15rem;font-weight:700;color:var(--color-accent-gold);
     }
-
-    /* Main Page Container */
-    .vodafone-page-main {
-      padding: 45px 0 75px;
-      min-height: calc(100vh - 150px);
-    }
-
-    /* Hero / Title Section */
-    .vodafone-header-block {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 40px;
-    }
-
+    .vodafone-page-main {padding:45px 0 75px;min-height:calc(100vh - 150px)}
+    .vodafone-header-block {text-align:center;max-width:720px;margin:0 auto 40px}
     .vodafone-top-icon-box {
-      width: 58px;
-      height: 58px;
-      margin: 0 auto 14px;
-      background: #FFFFFF;
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-sm);
-      border: 1px solid rgba(216, 181, 109, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 8px;
+      width:58px;height:58px;margin:0 auto 14px;background:#fff;
+      border-radius:var(--radius-md);box-shadow:var(--shadow-sm);
+      border:1px solid rgba(216,181,109,.3);display:flex;
+      align-items:center;justify-content:center;padding:8px;
     }
-
-    .vodafone-top-icon-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
+    .vodafone-top-icon-box img {width:100%;height:100%;object-fit:contain}
     .vodafone-badge-count {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(23, 79, 70, 0.1);
-      border: 1px solid rgba(23, 79, 70, 0.25);
-      color: var(--color-secondary-green);
-      font-size: 0.8rem;
-      font-weight: 700;
-      padding: 4px 14px;
-      border-radius: var(--radius-full);
-      margin-bottom: 12px;
+      display:inline-flex;align-items:center;gap:6px;
+      background:rgba(23,79,70,.1);border:1px solid rgba(23,79,70,.25);
+      color:var(--color-secondary-green);font-size:.8rem;font-weight:700;
+      padding:4px 14px;border-radius:var(--radius-full);margin-bottom:12px;
     }
-
-    .vodafone-badge-count-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #E60000;
-    }
-
+    .vodafone-badge-count-dot {width:8px;height:8px;border-radius:50%;background:#e60000}
     .vodafone-main-heading {
-      font-size: 2.3rem;
-      font-weight: 800;
-      color: var(--color-primary-dark);
-      margin-bottom: 8px;
+      font-size:2.3rem;font-weight:800;color:var(--color-primary-dark);margin-bottom:8px;
     }
-
-    .vodafone-desc-text {
-      font-size: 1.05rem;
-      color: var(--color-text-muted);
-      line-height: 1.6;
-    }
-
-    /* Wallets Grid */
+    .vodafone-desc-text {font-size:1.05rem;color:var(--color-text-muted);line-height:1.6}
     .wallets-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: 40px;
+      display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:24px;margin-bottom:40px;
     }
-
-    /* Single Wallet Card */
     .wallet-card {
-      background: var(--color-white);
-      border: 1px solid rgba(216, 181, 109, 0.35);
-      border-radius: var(--radius-md);
-      padding: 22px 20px;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      box-shadow: var(--shadow-sm);
-      transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+      background:var(--color-white);border:1px solid rgba(216,181,109,.35);
+      border-radius:var(--radius-md);padding:22px 20px;display:flex;
+      flex-direction:column;position:relative;box-shadow:var(--shadow-sm);
+      transition:transform var(--transition-smooth),box-shadow var(--transition-smooth),border-color var(--transition-smooth);
+      min-width:0;
     }
-
     .wallet-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--color-accent-gold);
+      transform:translateY(-4px);box-shadow:var(--shadow-md);
+      border-color:var(--color-accent-gold);
     }
-
-    .wallet-card-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 14px;
-    }
-
-    /* Serial Number Badge */
+    .wallet-card-header {display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
     .wallet-serial-badge {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #0A1812 0%, #174F46 100%);
-      color: var(--color-accent-gold);
-      font-weight: 800;
-      font-size: 0.95rem;
-      font-family: var(--font-latin);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(216, 181, 109, 0.4);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+      width:32px;height:32px;border-radius:50%;
+      background:linear-gradient(135deg,#0A1812,#174F46);
+      color:var(--color-accent-gold);font-weight:800;font-size:.95rem;
+      font-family:var(--font-latin);display:flex;align-items:center;justify-content:center;
+      border:1px solid rgba(216,181,109,.4);
     }
-
-    /* Unique Card Icon (Small: 24-32px) */
     .wallet-icon-holder {
-      width: 34px;
-      height: 34px;
-      border-radius: var(--radius-sm);
-      background: #F4F8F6;
-      border: 1px solid rgba(23, 79, 70, 0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-secondary-green);
-      transition: all var(--transition-fast);
+      width:34px;height:34px;border-radius:var(--radius-sm);background:#F4F8F6;
+      border:1px solid rgba(23,79,70,.12);display:flex;align-items:center;
+      justify-content:center;color:var(--color-secondary-green);
     }
-
-    .wallet-card:hover .wallet-icon-holder {
-      background: #E9F4F0;
-      color: var(--color-accent-gold);
-      transform: scale(1.05);
-    }
-
-    .wallet-icon-holder svg {
-      width: 20px;
-      height: 20px;
-    }
-
+    .wallet-icon-holder svg {width:20px;height:20px}
     .wallet-title {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--color-primary-dark);
-      margin-bottom: 12px;
+      font-size:1.1rem;font-weight:800;color:var(--color-primary-dark);margin-bottom:12px;
     }
-
-    /* Phone Box */
     .wallet-data-row {
-      background: #F7FAF8;
-      border: 1px dashed rgba(23, 79, 70, 0.2);
-      border-radius: var(--radius-sm);
-      padding: 8px 12px;
-      margin-bottom: 12px;
-      text-align: center;
+      background:#F7FAF8;border:1px dashed rgba(23,79,70,.2);
+      border-radius:var(--radius-sm);padding:8px 12px;margin-bottom:12px;text-align:center;
     }
-
     .wallet-data-label {
-      font-size: 0.7rem;
-      color: var(--color-text-muted);
-      margin-bottom: 2px;
-      display: block;
+      font-size:.7rem;color:var(--color-text-muted);margin-bottom:2px;display:block;
     }
-
     .wallet-phone-val {
-      font-family: var(--font-latin);
-      font-size: 1.15rem;
-      font-weight: 800;
-      color: var(--color-primary-dark);
-      letter-spacing: 0.05em;
-      direction: ltr;
-      display: block;
+      font-family:var(--font-latin);font-size:1.15rem;font-weight:800;
+      color:var(--color-primary-dark);letter-spacing:.05em;direction:ltr;display:block;
     }
-
-    /* QR Code Display Frame */
     .wallet-qr-wrapper {
-      background: #FAFCFB;
-      border: 1px solid rgba(216, 181, 109, 0.35);
-      border-radius: var(--radius-sm);
-      padding: 12px 10px 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 12px;
+      background:#FAFCFB;border:1px solid rgba(216,181,109,.35);
+      border-radius:var(--radius-sm);padding:12px 10px 10px;display:flex;
+      flex-direction:column;align-items:center;justify-content:center;margin-bottom:12px;
     }
-
     .wallet-qr-box {
-      width: 125px;
-      height: 125px;
-      background: #FFFFFF;
-      padding: 6px;
-      border-radius: 6px;
-      border: 1px solid rgba(23, 79, 70, 0.12);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width:125px;height:125px;box-sizing:border-box;background:#fff;padding:6px;
+      border-radius:6px;border:1px solid rgba(23,79,70,.12);
+      display:flex;align-items:center;justify-content:center;overflow:hidden;
     }
-
-    .wallet-qr-box canvas, .wallet-qr-box img {
-      display: block;
-      max-width: 100%;
-      height: auto;
+    .wallet-qr-box canvas,.wallet-qr-box img {
+      display:block;max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain;
     }
-
-    .wallet-qr-caption {
-      font-size: 0.72rem;
-      color: var(--color-text-muted);
-      margin-top: 6px;
-      font-weight: 500;
-    }
-
-    /* USSD Code Box */
+    .wallet-qr-caption {font-size:.72rem;color:var(--color-text-muted);margin-top:6px}
     .wallet-code-row {
-      background: linear-gradient(135deg, rgba(216, 181, 109, 0.12) 0%, rgba(216, 181, 109, 0.04) 100%);
-      border: 1px solid rgba(216, 181, 109, 0.45);
-      border-radius: var(--radius-sm);
-      padding: 8px 12px;
-      margin-bottom: 16px;
-      text-align: center;
+      background:linear-gradient(135deg,rgba(216,181,109,.12),rgba(216,181,109,.04));
+      border:1px solid rgba(216,181,109,.45);border-radius:var(--radius-sm);
+      padding:8px 12px;margin-bottom:16px;text-align:center;
     }
-
     .wallet-code-val {
-      font-family: var(--font-latin);
-      font-size: 0.98rem;
-      font-weight: 800;
-      color: var(--color-secondary-green);
-      letter-spacing: 0.05em;
-      direction: ltr;
-      display: block;
+      font-family:var(--font-latin);font-size:.98rem;font-weight:800;
+      color:var(--color-secondary-green);letter-spacing:.04em;direction:ltr;
+      display:block;overflow-wrap:anywhere;
     }
-
-    /* Action Buttons (UI Stage) */
-    .wallet-actions-group {
-      margin-top: auto;
-      display: flex;
-      gap: 10px;
-    }
-
+    .wallet-actions-group {margin-top:auto;display:flex;gap:10px}
     .btn-wallet-action {
-      flex: 1;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      padding: 10px 12px;
-      border-radius: var(--radius-sm);
-      transition: all var(--transition-fast);
-      cursor: pointer;
-      user-select: none;
+      flex:1;min-width:0;display:inline-flex;align-items:center;justify-content:center;
+      gap:7px;font-family:inherit;font-size:.85rem;font-weight:700;padding:10px 8px;
+      border-radius:var(--radius-sm);transition:all var(--transition-fast);
+      cursor:pointer;user-select:none;
     }
-
+    .btn-wallet-action:disabled {opacity:.65;cursor:wait}
     .btn-wallet-call {
-      background: var(--gradient-hero);
-      color: var(--color-white);
-      border: 1px solid rgba(216, 181, 109, 0.35);
-      box-shadow: 0 2px 8px rgba(10, 24, 18, 0.15);
+      background:var(--gradient-hero);color:var(--color-white);
+      border:1px solid rgba(216,181,109,.35);
     }
-
-    .btn-wallet-call:hover {
-      background: var(--gradient-gold);
-      color: var(--color-primary-dark);
-      border-color: var(--color-accent-gold);
-      transform: translateY(-2px);
+    .btn-wallet-call:hover {background:var(--gradient-gold);color:var(--color-primary-dark)}
+    .btn-wallet-copy {background:#F0F4F2;color:var(--color-secondary-green);border:1px solid rgba(23,79,70,.2)}
+    .btn-wallet-copy:hover {background:#E0ECE8;color:var(--color-primary-dark)}
+    .btn-wallet-action svg {width:16px;height:16px;flex-shrink:0}
+    .wallet-feedback {
+      font-size:.82rem;font-weight:700;text-align:center;margin-top:10px;
+      min-height:20px;color:var(--color-secondary-green);
     }
-
-    .btn-wallet-copy {
-      background: #F0F4F2;
-      color: var(--color-secondary-green);
-      border: 1px solid rgba(23, 79, 70, 0.2);
-    }
-
-    .btn-wallet-copy:hover {
-      background: #E0ECE8;
-      color: var(--color-primary-dark);
-      border-color: var(--color-secondary-green);
-      transform: translateY(-2px);
-    }
-
-    .btn-wallet-action svg {
-      width: 16px;
-      height: 16px;
-    }
-
-    /* Notice / Instruction Section at bottom */
+    .wallet-feedback.error {color:#b42318}
     .vodafone-notice-box {
-      background: #E8F3EF;
-      border: 1px solid rgba(23, 79, 70, 0.25);
-      border-right: 5px solid var(--color-secondary-green);
-      border-radius: var(--radius-md);
-      padding: 20px 24px;
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
+      background:#E8F3EF;border:1px solid rgba(23,79,70,.25);
+      border-right:5px solid var(--color-secondary-green);border-radius:var(--radius-md);
+      padding:20px 24px;display:flex;align-items:flex-start;gap:16px;
     }
-
     .notice-icon-box {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: var(--color-secondary-green);
-      color: var(--color-white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+      width:36px;height:36px;border-radius:50%;background:var(--color-secondary-green);
+      color:var(--color-white);display:flex;align-items:center;justify-content:center;flex-shrink:0;
     }
-
-    .notice-icon-box svg {
-      width: 18px;
-      height: 18px;
+    .notice-icon-box svg {width:18px;height:18px}
+    .notice-text-content h4 {font-size:1.02rem;font-weight:800;color:var(--color-primary-dark);margin-bottom:4px}
+    .notice-text-content p {font-size:.9rem;color:var(--color-secondary-green);line-height:1.6}
+    @media(max-width:992px) {
+      .wallets-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
     }
-
-    .notice-text-content h4 {
-      font-size: 1.02rem;
-      font-weight: 800;
-      color: var(--color-primary-dark);
-      margin-bottom: 4px;
-    }
-
-    .notice-text-content p {
-      font-size: 0.9rem;
-      color: var(--color-secondary-green);
-      line-height: 1.6;
-    }
-
-    /* Responsive Queries */
-    @media (max-width: 992px) {
-      .wallets-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .wallets-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .vodafone-main-heading {
-        font-size: 1.85rem;
-      }
-
-      .vodafone-notice-box {
-        flex-direction: column;
-        padding: 16px;
-      }
+    @media(max-width:640px) {
+      .wallets-grid {grid-template-columns:1fr;gap:20px}
+      .vodafone-main-heading {font-size:1.85rem}
+      .vodafone-notice-box {flex-direction:column;padding:16px}
+      .subpage-header-container {gap:8px}
+      .header-subpage-title {font-size:.95rem}
+      .btn-back-home {padding:8px 10px;font-size:.82rem}
+      .brand-sub-tag {font-size:.65rem}
     }
   </style>
 </head>
-<body dir="rtl">
 
-  <!-- ==========================================================================
-       Header Section
-       ========================================================================== -->
+<body dir="rtl">
   <header class="site-header" id="mainHeader">
     <div class="container subpage-header-container">
-      <!-- Brand Identity / Logo -->
-      <a href="index.html" class="brand-identity" style="text-decoration:none;">
+      <a href="index.html" class="brand-identity" style="text-decoration:none">
         <div class="brand-logo-frame">
           <img src="logo.jpeg" alt="شعار شركة البدر للاستيراد والتصدير" class="brand-logo-img">
         </div>
@@ -446,55 +187,35 @@
         </div>
       </a>
 
-      <!-- Page Title -->
-      <div class="header-subpage-title">
-        <span>فودافون كاش</span>
-      </div>
+      <div class="header-subpage-title">فودافون كاش</div>
 
-      <!-- Back to Main Page Button -->
-      <div>
-        <a href="index.html" class="btn-back-home" aria-label="الرجوع للرئيسية">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-          <span>الرئيسية</span>
-        </a>
-      </div>
+      <a href="index.html" class="btn-back-home" aria-label="الرجوع للرئيسية">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+        <span>الرئيسية</span>
+      </a>
     </div>
   </header>
 
-  <!-- ==========================================================================
-       Vodafone Cash Wallets Section
-       ========================================================================== -->
   <main class="vodafone-page-main">
     <div class="container">
-      
-      <!-- Top Title and Info -->
       <div class="vodafone-header-block">
         <div class="vodafone-top-icon-box">
           <img src="vodafone.png" alt="Vodafone Cash Logo">
         </div>
-        
-        <h1 class="vodafone-main-heading">
-          فودافون كاش
-        </h1>
-        
-        <p class="vodafone-desc-text">
-          اختر المحفظة المناسبة للوصول إلى كود التحويل الخاص بها بسهولة.
-        </p>
-        
-        <div class="vodafone-badge-count" style="margin-top: 10px;">
+
+        <h1 class="vodafone-main-heading">فودافون كاش</h1>
+        <p class="vodafone-desc-text">اختر المحفظة المناسبة للوصول إلى كود التحويل الخاص بها بسهولة.</p>
+
+        <div class="vodafone-badge-count" style="margin-top:10px">
           <span class="vodafone-badge-count-dot"></span>
           <span>عدد المحافظ المتاحة: 6</span>
         </div>
       </div>
 
-      <!-- 6 Wallets Dynamic Grid Container -->
-      <div class="wallets-grid" id="walletsContainer">
-        <!-- Rendered dynamically from siteConfig.js data list -->
-      </div>
+      <div class="wallets-grid" id="walletsContainer"></div>
 
-      <!-- Bottom Notice Box -->
       <div class="vodafone-notice-box">
         <div class="notice-icon-box">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -505,16 +226,12 @@
         </div>
         <div class="notice-text-content">
           <h4>تأكد من اختيار المحفظة الصحيحة قبل متابعة أي عملية تحويل.</h4>
-          <p>قد يختلف دعم أكواد USSD حسب الجهاز وتطبيق الاتصال.</p>
+          <p>قد لا تدعم بعض الأجهزة فتح أكواد USSD عبر روابط الاتصال. راجع الكود قبل تأكيد أي إجراء.</p>
         </div>
       </div>
-
     </div>
   </main>
 
-  <!-- ==========================================================================
-       Minimal Copyright Footer
-       ========================================================================== -->
   <footer class="site-footer" id="footer">
     <div class="container footer-minimal-container">
       <div class="copyright-text">
@@ -523,137 +240,225 @@
     </div>
   </footer>
 
-  <!-- Page Logic Script -->
   <script type="module">
-    import { siteConfig } from './siteConfig.js';
+    import { siteConfig } from "./siteConfig.js";
 
     document.addEventListener("DOMContentLoaded", () => {
-      // 1. Update copyright year automatically
-      const yearEl = document.getElementById("currentYear");
-      if (yearEl) {
-        yearEl.textContent = new Date().getFullYear();
-      }
+      document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-      // 2. SVG Icons helper for distinct wallet icons (24-32px)
       const iconsMap = {
         wallet: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path></svg>`,
-        phone: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>`,
-        card: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>`,
+        phone: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>`,
+        card: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>`,
         coins: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"></circle><path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path><path d="M7 6h1v4"></path><path d="m16.71 13.88.7.71-2.82 2.82"></path></svg>`,
         shield: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>`,
         qrcode: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>`
       };
 
-      // 3. Render 6 Wallets dynamically from centralized data
       const container = document.getElementById("walletsContainer");
-      const walletsData = siteConfig.payments.vodafoneCash.wallets || [];
-      const getCode = siteConfig.payments.vodafoneCash.getTransferCode;
-      const getTelUri = siteConfig.payments.vodafoneCash.getTelUri;
+      const paymentConfig = siteConfig?.payments?.vodafoneCash;
 
-      if (container && walletsData.length > 0) {
-        container.innerHTML = walletsData.map(wallet => {
-          const transferCode = getCode(wallet.phone);
-          const telUri = getTelUri(wallet.phone);
-          const iconSvg = iconsMap[wallet.iconType] || iconsMap.wallet;
-          const qrContainerId = `qr-code-${wallet.id}`;
-
-          return `
-            <div class="wallet-card" data-wallet-id="${wallet.id}">
-              <div class="wallet-card-header">
-                <div class="wallet-serial-badge">${wallet.id}</div>
-                <div class="wallet-icon-holder" aria-hidden="true">
-                  ${iconSvg}
-                </div>
-              </div>
-
-              <div class="wallet-title">${wallet.nameAr}</div>
-
-              <!-- رقم الهاتف الخاص بالمحفظة -->
-              <div class="wallet-data-row">
-                <span class="wallet-data-label">رقم الهاتف</span>
-                <span class="wallet-phone-val">${wallet.phone}</span>
-              </div>
-
-              <!-- QR Code الخاص بالمحفظة (باستخدام بروتوكول tel:) -->
-              <div class="wallet-qr-wrapper">
-                <div class="wallet-qr-box" id="${qrContainerId}" title="${telUri}"></div>
-                <span class="wallet-qr-caption">امسح الرمز لفتح تطبيق الاتصال</span>
-              </div>
-
-              <!-- كود USSD مكتوب بوضوح -->
-              <div class="wallet-code-row">
-                <span class="wallet-data-label">كود التحويل (USSD)</span>
-                <span class="wallet-code-val">${transferCode}</span>
-              </div>
-
-              <!-- الأزرار (مرحلة UI فقط، غير مفعلة حالياً) -->
-              <div class="wallet-actions-group">
-                <button type="button" class="btn-wallet-action btn-wallet-call" data-wallet-id="${wallet.id}" data-tel="${telUri}" aria-label="فتح تطبيق الاتصال لمحفظة ${wallet.id}">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                  </svg>
-                  <span>فتح تطبيق الاتصال</span>
-                </button>
-
-                <button type="button" class="btn-wallet-action btn-wallet-copy" data-wallet-id="${wallet.id}" data-code="${transferCode}" aria-label="نسخ الكود لمحفظة ${wallet.id}">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                  </svg>
-                  <span>نسخ الكود</span>
-                </button>
-              </div>
-            </div>
-          `;
-        }).join('');
-
-        // توليد QR Code لكل محفظة بشكل ديناميكي ومستقل باستخدام بروتوكول tel:
-        const initQRCodes = () => {
-          walletsData.forEach(wallet => {
-            const qrContainerId = `qr-code-${wallet.id}`;
-            const qrElem = document.getElementById(qrContainerId);
-            const telUri = getTelUri(wallet.phone);
-
-            if (qrElem) {
-              qrElem.innerHTML = ""; // تفريغ أي محتوى سابق
-              if (typeof QRCode !== 'undefined') {
-                try {
-                  new QRCode(qrElem, {
-                    text: telUri,
-                    width: 110,
-                    height: 110,
-                    colorDark: "#0A1812",
-                    colorLight: "#FFFFFF",
-                    correctLevel: QRCode.CorrectLevel.M
-                  });
-                } catch (err) {
-                  console.error(`Error generating QR for wallet ${wallet.id}:`, err);
-                  // في حال حدوث أي خطأ في الكانفاس، استخدام توليد SVG/Image كـ Fallback
-                  qrElem.innerHTML = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=${encodeURIComponent(telUri)}" alt="QR Code" width="110" height="110">`;
-                }
-              } else {
-                // في حال عدم تحميل المكتبة لأي سبب في البيئة المحلية
-                qrElem.innerHTML = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=${encodeURIComponent(telUri)}" alt="QR Code" width="110" height="110">`;
-              }
-            }
-          });
-        };
-
-        // تنفيذ التوليد مع ضمان اكتمال رسم الـ DOM
-        setTimeout(initQRCodes, 50);
+      if (!paymentConfig || !Array.isArray(paymentConfig.wallets)) {
+        container.textContent = "تعذر تحميل بيانات المحافظ. راجع ملف siteConfig.js.";
+        console.error("Vodafone Cash configuration is missing or invalid.");
+        return;
       }
 
-      // 4. سلوك الأزرار في مرحلة الـ UI: تأثير بصري خفيف دون تشغيل اتصال أو نسخ
-      const allActionButtons = document.querySelectorAll(".btn-wallet-action");
-      allActionButtons.forEach(btn => {
-        btn.addEventListener("click", (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          btn.style.transform = "scale(0.97)";
+      const walletsData = paymentConfig.wallets;
+      const getCode = paymentConfig.getTransferCode;
+      const getTelUri = paymentConfig.getTelUri;
+
+      if (typeof getCode !== "function" || typeof getTelUri !== "function") {
+        container.textContent = "إعدادات أكواد التحويل غير مكتملة. راجع ملف siteConfig.js.";
+        console.error("getTransferCode or getTelUri is not a function.");
+        return;
+      }
+
+      // توليد البطاقات
+      container.innerHTML = walletsData.map(wallet => {
+        const transferCode = String(getCode(wallet.phone));
+        const telUri = String(getTelUri(wallet.phone));
+        const iconSvg = iconsMap[wallet.iconType] || iconsMap.wallet;
+        const qrId = `qr-code-${wallet.id}`;
+        const safeName = String(wallet.nameAr ?? "محفظة");
+
+        return `
+          <article class="wallet-card" data-wallet-id="${wallet.id}">
+            <div class="wallet-card-header">
+              <div class="wallet-serial-badge">${wallet.id}</div>
+              <div class="wallet-icon-holder" aria-hidden="true">${iconSvg}</div>
+            </div>
+
+            <div class="wallet-title">${safeName}</div>
+
+            <div class="wallet-data-row">
+              <span class="wallet-data-label">رقم الهاتف</span>
+              <span class="wallet-phone-val" dir="ltr">${wallet.phone}</span>
+            </div>
+
+            <div class="wallet-qr-wrapper">
+              <div class="wallet-qr-box" id="${qrId}" aria-label="QR Code للمحفظة"></div>
+              <span class="wallet-qr-caption">امسح الرمز لمحاولة فتح تطبيق الاتصال</span>
+            </div>
+
+            <div class="wallet-code-row">
+              <span class="wallet-data-label">كود التحويل (USSD)</span>
+              <span class="wallet-code-val" dir="ltr">${transferCode}</span>
+            </div>
+
+            <div class="wallet-actions-group">
+              <button type="button"
+                class="btn-wallet-action btn-wallet-call"
+                data-wallet-id="${wallet.id}"
+                aria-label="فتح تطبيق الاتصال لمحفظة ${wallet.id}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span>فتح تطبيق الاتصال</span>
+              </button>
+
+              <button type="button"
+                class="btn-wallet-action btn-wallet-copy"
+                data-wallet-id="${wallet.id}"
+                aria-label="نسخ الكود لمحفظة ${wallet.id}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>نسخ الكود</span>
+              </button>
+            </div>
+
+            <div class="wallet-feedback" aria-live="polite"></div>
+          </article>
+        `;
+      }).join("");
+
+      // توليد QR Code لكل محفظة
+      walletsData.forEach(wallet => {
+        const qrElem = document.getElementById(`qr-code-${wallet.id}`);
+        if (!qrElem) return;
+
+        const telUri = String(getTelUri(wallet.phone));
+
+        if (typeof QRCode !== "undefined") {
+          try {
+            new QRCode(qrElem, {
+              text: telUri,
+              width: 110,
+              height: 110,
+              colorDark: "#0A1812",
+              colorLight: "#FFFFFF",
+              correctLevel: QRCode.CorrectLevel.M
+            });
+          } catch (error) {
+            console.error("QR generation failed:", wallet.id, error);
+            showQrFallback(qrElem, telUri);
+          }
+        } else {
+          showQrFallback(qrElem, telUri);
+        }
+      });
+
+      function showQrFallback(element, value) {
+        const img = document.createElement("img");
+        img.alt = "QR Code";
+        img.width = 110;
+        img.height = 110;
+        img.src = "https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=" + encodeURIComponent(value);
+        element.replaceChildren(img);
+      }
+
+      // التعامل مع الأزرار بعد إنشاء البطاقات (Event Delegation)
+      container.addEventListener("click", async event => {
+        const button = event.target.closest("button.btn-wallet-action");
+        if (!button || !container.contains(button)) return;
+
+        const card = button.closest(".wallet-card");
+        if (!card) return;
+
+        const walletId = button.dataset.walletId;
+        const wallet = walletsData.find(item => String(item.id) === String(walletId));
+        if (!wallet) return;
+
+        const feedback = card.querySelector(".wallet-feedback");
+        const code = String(getCode(wallet.phone));
+
+        function showMessage(message, isError = false) {
+          feedback.textContent = message;
+          feedback.classList.toggle("error", isError);
+        }
+
+        // زر نسخ الكود
+        if (button.classList.contains("btn-wallet-copy")) {
+          const label = button.querySelector("span");
+          const originalLabel = label.textContent;
+          button.disabled = true;
+
+          try {
+            if (navigator.clipboard && window.isSecureContext) {
+              await navigator.clipboard.writeText(code);
+            } else {
+              const textarea = document.createElement("textarea");
+              textarea.value = code;
+              textarea.setAttribute("readonly", "");
+              textarea.style.position = "fixed";
+              textarea.style.top = "0";
+              textarea.style.left = "-9999px";
+              document.body.appendChild(textarea);
+              textarea.select();
+              textarea.setSelectionRange(0, textarea.value.length);
+
+              const copied = document.execCommand("copy");
+              textarea.remove();
+
+              if (!copied) throw new Error("Browser copy command failed");
+            }
+
+            showMessage("تم نسخ الكود بنجاح ✓");
+            label.textContent = "تم النسخ ✓";
+            setTimeout(() => {
+              label.textContent = originalLabel;
+            }, 1800);
+          } catch (error) {
+            console.error("Copy failed:", error);
+            showMessage("تعذر النسخ تلقائيًا. انسخ الكود يدويًا.", true);
+            window.prompt("انسخ كود التحويل يدويًا:", code);
+          } finally {
+            button.disabled = false;
+          }
+
+          return;
+        }
+
+        // زر الاتصال: محاولة فتح رابط tel من تفاعل المستخدم
+        if (button.classList.contains("btn-wallet-call")) {
+          const telUri = String(getTelUri(wallet.phone));
+
+          showMessage("جارٍ محاولة فتح تطبيق الاتصال…");
+
+          // بعض الأجهزة لا تقبل رموز USSD عبر tel:؛ لا يمكن ضمان فتحه.
+          // نستخدم الرابط الناتج من إعدادات المشروع ونترك تأكيد الاتصال للمستخدم.
+          const anchor = document.createElement("a");
+          anchor.href = telUri;
+          anchor.style.display = "none";
+          anchor.setAttribute("aria-label", "فتح تطبيق الاتصال");
+          document.body.appendChild(anchor);
+
+          try {
+            anchor.click();
+          } catch (error) {
+            console.error("Unable to open dialer:", error);
+          }
+
+          anchor.remove();
+
+          // إظهار الكود كبديل لأن المتصفح لا يستطيع التأكد من فتح تطبيق الاتصال.
           setTimeout(() => {
-            btn.style.transform = "";
-          }, 150);
-        });
+            showMessage("لو لم يفتح الاتصال، انسخ الكود وأدخله يدويًا.");
+            window.prompt("كود التحويل الخاص بهذه المحفظة:", code);
+          }, 700);
+        }
       });
     });
   </script>
